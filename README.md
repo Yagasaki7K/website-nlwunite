@@ -27,7 +27,7 @@ In the backend, we are using Node.js.
 
 <p align="center">
   <img src="https://github.com/Yagasaki7K/website-nlwunite/assets/23272064/f1d68ca4-749a-4c44-b76a-3aad2691d8c5"/>
-  <img src="https://github.com/Yagasaki7K/website-nlwunite/assets/23272064/a02f5843-c702-46cb-b0a7-6698dc819185"/>
+  <img src="https://github.com/Yagasaki7K/website-nlwunite/assets/23272064/f2a77dbc-1046-4ce6-b853-9c055e105056"/>
 </p>
 
 # React + TypeScript + Vite
