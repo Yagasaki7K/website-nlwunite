@@ -6,3 +6,21 @@ Content-Type: application/json
     "details" "An event for lovers of programmation",
     "maximumAttendees": 100
 }
+
+###
+
+POST http://localhost:3333/events/:id/attendees
+Content-Type: application/json
+
+{
+    "name": "Anderson Marlon",
+    "email": "anderson18.marlon@gmail.com" 
+}
+
+###
+
+GET http://localhost:3333/events/:id
+
+###
+
+GET http://localhost:3333/attendees/:id/badge
