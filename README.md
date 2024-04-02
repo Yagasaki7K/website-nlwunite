@@ -28,6 +28,8 @@ In the backend, we are using Node.js.
 - Bun (experimental)
 - Typescript
 - Fastify
+- Prisma
+- Zod
 
 <p align="center">
   <img src="https://github.com/Yagasaki7K/website-nlwunite/assets/23272064/f1d68ca4-749a-4c44-b76a-3aad2691d8c5"/>
@@ -106,7 +108,7 @@ Nessa aplicação vamos utilizar banco de dados relacional (SQL). Para ambiente 
 
 ### Diagrama ERD
 
-<img src=".github/erd.svg" width="600" alt="Diagrama ERD do banco de dados" />
+<img src="https://github.com/rocketseat-education/nlw-unite-nodejs/raw/main/.github/erd.svg" width="600" alt="Diagrama ERD do banco de dados" />
 
 ### Estrutura do banco (SQL)
 
