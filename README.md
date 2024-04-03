@@ -32,6 +32,15 @@ In the backend, we are using Node.js.
 - Prisma
 - Zod
 - fastify-type-provider-zod
+- @fastify-swagger
+- @fastify-swagger-ui
+- @fastify/cors
+- Swagger
+
+## Technologies in DevOps
+- tsup
+- Github
+- Vercel
 
 <p align="center">
   <img src="https://github.com/Yagasaki7K/website-nlwunite/assets/23272064/f1d68ca4-749a-4c44-b76a-3aad2691d8c5"/>

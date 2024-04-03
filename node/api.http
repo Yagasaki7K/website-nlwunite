@@ -24,3 +24,15 @@ GET http://localhost:3333/events/:id
 ###
 
 GET http://localhost:3333/attendees/:id/badge
+
+###
+
+GET http://localhost:3333/attendees/:id/check-in
+
+###
+
+GET http://localhost:3333/events/:id/attendees
+
+###
+
+GET http://localhost:3333/events/:id/attendees?query=Anderson
