@@ -4,6 +4,7 @@ const HeaderDetails = styled.div`
     display: flex;
     align-items: center;
     gap: 1.25rem;
+    margin-top: -2rem;
     padding: 2rem 0;
 
     nav {

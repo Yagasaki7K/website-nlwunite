@@ -1,5 +1,6 @@
 import nlwUniteIcon from '../assets/nlw-unite-icon.svg'
 import HeaderDetails from './HeaderDetails'
+import NavLink from './NavLink'
 
 const Header = () => {
     return (
@@ -7,8 +8,8 @@ const Header = () => {
             <img src={nlwUniteIcon} alt="Nlw Unite Icon" />
 
             <nav>
-                <a href="" className="event">Eventos</a>
-                <a href="">Participantes</a>
+                <NavLink href="/eventos">Eventos</NavLink>
+                <NavLink href="/participantes">Participantes</NavLink>
             </nav>
         </HeaderDetails>
     )

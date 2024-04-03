@@ -1,13 +1,44 @@
+import { ChangeEvent, useState } from "react"
 import AttendeeListDetails from "./AttendeeListDetails"
+import { attendees } from "../data/attendees"
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+
+dayjs.extend(relativeTime)
+dayjs.locale('pt-br')
 
 const AttendeeList = () => {
+    const [search, setSearch] = useState('')
+    const [page, setPage] = useState(1)
+    const totalPages = Math.ceil(attendees.length / 10)
+
+    function onSearchInputChanged(event: ChangeEvent<HTMLInputElement>) {
+        setSearch(event.target.value)
+    }
+
+    function goToFirstPage() {
+        setPage(1)
+    }
+
+    function goToPreviousPage() {
+        setPage(page - 1)
+    }
+
+    function goToNextPage() {
+        setPage(page + 1)
+    }
+
+    function goToLastPage() {
+        setPage(totalPages)
+    }
+
     return (
         <AttendeeListDetails>
             <div className="header">
                 <h1>Participantes</h1>
                 <div className="search">
                     <i className="uil uil-search"></i>
-                    <input type="text" placeholder="Buscar Participante..." />
+                    <input onChange={onSearchInputChanged} type="text" placeholder="Buscar Participante..." />
                 </div>
             </div>
 
@@ -27,21 +58,21 @@ const AttendeeList = () => {
                     </thead>
                     <tbody>
                         {
-                            Array.from({ length: 8 }).map((_, index) => {
+                            attendees.slice((page - 1) * 10, (page * 10)).map((attendee) => {
                                 return (
-                                    <tr key={index} className="effectOnHoverTR">
+                                    <tr key={attendee.id} className="effectOnHoverTR">
                                         <td>
                                             <input type="checkbox" name="" id="" />
                                         </td>
-                                        <td>12345</td>
+                                        <td>{attendee.id}</td>
                                         <td>
                                             <div>
-                                                <span className="name">Anderson Marlon</span>
-                                                <span>anderson18.marlon@gmail.com</span>
+                                                <span className="name">{attendee.name}</span>
+                                                <span>{attendee.email}</span>
                                             </div>
                                         </td>
-                                        <td>7 dias atrás</td>
-                                        <td>3 dias atrás</td>
+                                        <td>{dayjs().to(attendee.createdAt)}</td>
+                                        <td>{dayjs().to(attendee.checkedInAt)}</td>
                                         <td>
                                             <button><i className="uil uil-ellipsis-h"></i></button>
                                         </td>
@@ -54,17 +85,17 @@ const AttendeeList = () => {
                     <tfoot>
                         <tr>
                             <td colSpan={3}>
-                                Mostrando 10 de 228 itens
+                                Mostrando 10 de {attendees.length} itens
                             </td>
                             <td colSpan={3} className="pagination">
                                 <div className="paginationDetail">
-                                    <span>Página 1 de 23</span>
+                                    <span>Página {page} de {totalPages}</span>
 
                                     <div className="buttonsNavigation">
-                                        <button><i className="uil uil-angle-double-left"></i></button>
-                                        <button><i className="uil uil-angle-left"></i></button>
-                                        <button className="active"><i className="uil uil-angle-right"></i></button>
-                                        <button className="active"><i className="uil uil-angle-double-right"></i></button>
+                                        <button onClick={goToFirstPage} disabled={page === 1}><i className="uil uil-angle-double-left"></i></button>
+                                        <button onClick={goToPreviousPage} disabled={page === 1}><i className="uil uil-angle-left"></i></button>
+                                        <button onClick={goToNextPage} disabled={page === totalPages}><i className="uil uil-angle-right"></i></button>
+                                        <button onClick={goToLastPage} disabled={page === totalPages}><i className="uil uil-angle-double-right"></i></button>
                                     </div>
                                 </div>
                             </td>
@@ -72,7 +103,7 @@ const AttendeeList = () => {
                     </tfoot>
                 </table>
             </div>
-        </AttendeeListDetails >
+        </AttendeeListDetails>
     )
 }
 

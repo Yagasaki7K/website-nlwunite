@@ -3,6 +3,7 @@ import styled from "styled-components"
 const AttendeeListDetails = styled.div`
     .header {
         display: flex;
+        margin-top: -1rem;
         gap: 0.75rem;
         align-items: center;
 
@@ -126,12 +127,12 @@ const AttendeeListDetails = styled.div`
                         gap: 0.375rem;
 
                         button {
-                            background: #1f1e22;
+                            background: #2b2b2b;
                             border: 1px solid rgba(255, 255, 255, 0.1);
                         }
                     
-                        .active {
-                            background: #2b2b2b;
+                        button:disabled {
+                            background: #1f1e22;
                         }
                     }
                 }
