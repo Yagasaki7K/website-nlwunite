@@ -22,6 +22,7 @@ In the backend, we are using Node.js.
 - Styled Components
 - Bun
 - Unicons
+- dayjs
 
 ## Technologies in Node (in this project)
 - Node

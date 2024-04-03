@@ -133,6 +133,7 @@ const AttendeeListDetails = styled.div`
                     
                         button:disabled {
                             background: #1f1e22;
+                            cursor: not-allowed;
                         }
                     }
                 }
