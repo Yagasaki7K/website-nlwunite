@@ -15,7 +15,7 @@ This is a project for Next Level Week, where we created a website using React, V
 
 In the backend, we are using Node.js.
 
-## Technologies in React (in this project)
+## Technologies in React
 - React
 - Vite
 - TypeScript
@@ -24,7 +24,7 @@ In the backend, we are using Node.js.
 - Unicons
 - dayjs
 
-## Technologies in Node (in this project)
+## Technologies in Node
 - Node
 - Bun (experimental)
 - Typescript
