@@ -22,14 +22,14 @@ dayjs.locale('pt-br')
 
 const AttendeeList = () => {
     const [search, setSearch] = useState(() => {
-        const url = new URL(window.location.toString())
+        const url = new URL(window.location.toString());
 
         if (url.searchParams.has('search')) {
-            return String(url.searchParams.get('search')) ?? ''
+            return url.searchParams.get('search') ?? '';
         }
 
-        return ''
-    })
+        return '';
+    });
 
     const [page, setPage] = useState(() => {
         const url = new URL(window.location.toString())
@@ -105,7 +105,6 @@ const AttendeeList = () => {
         )
         : attendees;
 
-
     return (
         <AttendeeListDetails>
             <div className="header">
@@ -130,6 +129,7 @@ const AttendeeList = () => {
                             <th className="lastColumn"></th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {
                             filteredAttendees.slice((page - 1) * 10, (page * 10)).map((attendee) => {
@@ -156,6 +156,7 @@ const AttendeeList = () => {
                             )
                         }
                     </tbody>
+
                     <tfoot>
                         <tr>
                             <td colSpan={3}>
